@@ -265,7 +265,9 @@ class Spam_Destroyer {
 			return;
 
 		// Display notice
-		echo '<div id="comments-error-message"><p>' . __( 'Sorry, but our system has recognised you as a spammer. If you believe this to be an error, please contact us so that we can rectify the situation.', 'spam-destroyer' ) . '</p></div>';
+		$default_error_notice = '<div id="comments-error-message"><p>' . __( 'Sorry, but our system has determined you may be a spammer. If you believe this to be an error, please contact us so that we can rectify the situation.', 'spam-destroyer' ) . '</p></div>';
+		$error_notice = apply_filters('sd_error_notice', $default_error_notice);
+		echo $error_notice;
 
 	}
 
